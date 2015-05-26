@@ -9,14 +9,14 @@ Setup
 ========
 To install all needed Go packages for this project run the following.
 
-  ```
-  go get ./...
-  ```
+        ```
+        go get ./...
+        ```
 
 Development
 ==========
 To run the web application, run the following:
 
-  ```
-  go run main.go
-  ```
+        ```
+        go run main.go
+        ```
