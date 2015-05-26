@@ -9,14 +9,16 @@ Setup
 ========
 To install all needed Go packages for this project run the following.
 
-        ```
-        go get ./...
-        ```
+```
+go get ./...
+```
 
 Development
 ==========
 To run the web application, run the following:
 
-        ```
-        go run main.go
-        ```
+```
+go run main.go
+```
+
+Then you can visit the app in your browser at 127.0.0.1:8080 
