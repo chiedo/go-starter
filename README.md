@@ -7,7 +7,7 @@ Actively being developed... Currently not ready for anything.
 
 Setup
 ========
-- To install all needed Go packages for this project run the following.
+To install all needed Go packages for this project run the following.
 
         ```
         go get ./...
@@ -15,7 +15,7 @@ Setup
 
 Development
 ==========
-- To run the web application, run the following:
+To run the web application, run the following:
 
         ```
         go run main.go
