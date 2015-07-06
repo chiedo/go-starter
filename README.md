@@ -27,6 +27,9 @@ To run the web server and have it automatically update upon making changes run t
 Then you can visit the app in your browser at 127.0.0.1:4000. Note that you using this approach creates a proxy that you must use,
 so although your server is set to port 8080 in the main.go file, you must use port 4000.
 
+###ReactJS
+It will be up to you to get your ReactJS code in the static/js directory as react-bundle.js
+
 ##Deployment
 To build your application, run:
 
