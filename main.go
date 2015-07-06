@@ -19,7 +19,7 @@ func Bye(w http.ResponseWriter, r *http.Request) {
 }
 
 func React(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(fmt.Sprintf("ReactJS Route")))
+	http.ServeFile(w, r, "index.html")
 }
 
 func main() {
@@ -28,8 +28,12 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 	r := mux.NewRouter()
-	r.HandleFunc("/", Hello)
 	r.HandleFunc("/bye", Bye)
+
+	// Static files
+	r.HandleFunc("/static/{path:.*}", func(w http.ResponseWriter, r *http.Request) {
+		http.ServeFile(w, r, r.URL.Path[1:])
+	})
 
 	// Catch-all route for ReactJS to handle the routing
 	r.HandleFunc("/{path:.*}", React)

@@ -2,3 +2,5 @@ _vendor
 .env
 node_modules
 gin-bin
+static/js/react-bundle.js
+*.map
