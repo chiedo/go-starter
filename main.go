@@ -3,11 +3,15 @@ package main
 import (
 	"fmt"
 	"github.com/gorilla/mux"
+	"github.com/joho/godotenv"
+	"log"
 	"net/http"
+	"os"
 )
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(fmt.Sprintf("Hello World!")))
+	msg := os.Getenv("MESSAGE")
+	w.Write([]byte(fmt.Sprintf(msg)))
 }
 
 func Bye(w http.ResponseWriter, r *http.Request) {
@@ -15,6 +19,10 @@ func Bye(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	r := mux.NewRouter()
 	r.HandleFunc("/", Hello)
 	r.HandleFunc("/bye", Bye)
