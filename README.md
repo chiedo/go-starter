@@ -1,7 +1,7 @@
 Go-starter
 =========
 
-A starter structure for web development with Golang and ReactJS.
+A starter structure for web development with Golang. Has some pieces in place for ReactJS development.
 
 Actively being developed... Currently not ready for anything.
 
