@@ -30,7 +30,7 @@ func Routes() {
 	//
 	// ReactJS (Catch-all)
 	//
-	r.HandleFunc("/{path:.*}", controllers.React)
+	r.HandleFunc("/{path:.*}", controllers.StaticPagesReact)
 
 	http.ListenAndServe(":3001", r)
 }

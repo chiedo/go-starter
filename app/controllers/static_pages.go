@@ -17,7 +17,7 @@ func StaticPagesHello(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("hello")))
 }
 
-func React(w http.ResponseWriter, r *http.Request) {
+func StaticPagesReact(w http.ResponseWriter, r *http.Request) {
 	p := &Page{Title: "Hello World", StaticDir: os.Getenv("STATIC_DIR")}
 
 	t, _ := template.ParseFiles("resources/views/index.html")
