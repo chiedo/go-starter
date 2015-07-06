@@ -23,7 +23,7 @@ Lastly, create a `.env` file with the following contents for holding your local 
 ##Development
 To run the web server and have it automatically update upon making changes run the following (appears convoluted due to our use of gom):
 
-    env GOPATH='_vendor' gin -a 8080 -p 4000 run main.go
+    env GOPATH='_vendor' gin -a 8080 -p 4000 run app.go
 
 Then you can visit the app in your browser at 127.0.0.1:4000. Note that you using this approach creates a proxy that you must use,
 so although your server is set to port 8080 in the main.go file, you must use port 4000.

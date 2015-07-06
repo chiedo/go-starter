@@ -1,8 +1,7 @@
-package main
+package app
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"html/template"
 	"log"
@@ -37,21 +36,10 @@ func main() {
 	// Set up dotenv
 	err := godotenv.Load()
 
+	CreateRoutes()
+
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
 
-	// Set up the Router
-	r := mux.NewRouter()
-	r.HandleFunc("/bye", Bye)
-
-	// Static files
-	r.HandleFunc("/static/{path:.*}", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, r.URL.Path[1:])
-	})
-
-	// Catch-all route for ReactJS to handle the routing
-	r.HandleFunc("/{path:.*}", React)
-
-	http.ListenAndServe(":8080", r)
 }
