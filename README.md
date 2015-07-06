@@ -18,6 +18,7 @@ Then to install your pacakages (will be stored in \_vendor):
 Lastly, create a `.env` file with the following contents for holding your local environment variables.
 
     MESSAGE="hello world"
+    STATIC_DIR="/static"
 
 ##Development
 To run the web server and have it automatically update upon making changes run the following (appears convoluted due to our use of gom):

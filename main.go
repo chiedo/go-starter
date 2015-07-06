@@ -21,11 +21,12 @@ func Bye(w http.ResponseWriter, r *http.Request) {
 
 func React(w http.ResponseWriter, r *http.Request) {
 	type Page struct {
-		Title string
+		Title     string
+		StaticDir string
 		//Body  []byte
 	}
 
-	p := &Page{Title: "Hello World"}
+	p := &Page{Title: "Hello World", StaticDir: os.Getenv("STATIC_DIR")}
 
 	t, _ := template.ParseFiles("resources/views/index.html")
 
@@ -33,10 +34,14 @@ func React(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// Set up dotenv
 	err := godotenv.Load()
+
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+
+	// Set up the Router
 	r := mux.NewRouter()
 	r.HandleFunc("/bye", Bye)
 
