@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
@@ -19,7 +20,16 @@ func Bye(w http.ResponseWriter, r *http.Request) {
 }
 
 func React(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "index.html")
+	type Page struct {
+		Title string
+		//Body  []byte
+	}
+
+	p := &Page{Title: "Hello World"}
+
+	t, _ := template.ParseFiles("resources/views/index.html")
+
+	t.Execute(w, p)
 }
 
 func main() {
