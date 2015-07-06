@@ -1,4 +1,3 @@
-_vendor
 .env
 node_modules
 gin-bin
