@@ -16,7 +16,6 @@ Then to install your pacakages:
 
 Lastly, create a `.env` file with the following contents for holding your local environment variables.
 
-    MESSAGE="hello world"
     STATIC_DIR="/static"
 
 ##Development

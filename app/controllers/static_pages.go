@@ -14,12 +14,11 @@ type Page struct {
 }
 
 func Hello(w http.ResponseWriter, r *http.Request) {
-	msg := os.Getenv("MESSAGE")
-	w.Write([]byte(fmt.Sprintf(msg)))
+	w.Write([]byte(fmt.Sprintf("hello")))
 }
 
 func Bye(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(fmt.Sprintf("Bye World!")))
+	w.Write([]byte(fmt.Sprintf("goodbye")))
 }
 
 func React(w http.ResponseWriter, r *http.Request) {
