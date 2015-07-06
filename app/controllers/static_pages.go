@@ -13,12 +13,8 @@ type Page struct {
 	//Body  []byte
 }
 
-func Hello(w http.ResponseWriter, r *http.Request) {
+func StaticPagesHello(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("hello")))
-}
-
-func Bye(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte(fmt.Sprintf("goodbye")))
 }
 
 func React(w http.ResponseWriter, r *http.Request) {

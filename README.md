@@ -3,8 +3,6 @@ Go-starter
 
 A starter structure for web development with Golang. Has some pieces in place for ReactJS development.
 
-Actively being developed... Currently not ready for anything.
-
 ##Setup
 First make sure you have gin installed:
 
