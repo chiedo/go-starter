@@ -18,6 +18,10 @@ func Bye(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("Bye World!")))
 }
 
+func React(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte(fmt.Sprintf("ReactJS Route")))
+}
+
 func main() {
 	err := godotenv.Load()
 	if err != nil {
@@ -26,6 +30,9 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", Hello)
 	r.HandleFunc("/bye", Bye)
+
+	// Catch-all route for ReactJS to handle the routing
+	r.HandleFunc("/{path:.*}", React)
 
 	http.ListenAndServe(":8080", r)
 }
