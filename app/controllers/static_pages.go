@@ -1,13 +1,17 @@
-package app
+package controllers
 
 import (
 	"fmt"
-	"github.com/joho/godotenv"
 	"html/template"
-	"log"
 	"net/http"
 	"os"
 )
+
+type Page struct {
+	Title     string
+	StaticDir string
+	//Body  []byte
+}
 
 func Hello(w http.ResponseWriter, r *http.Request) {
 	msg := os.Getenv("MESSAGE")
@@ -19,27 +23,9 @@ func Bye(w http.ResponseWriter, r *http.Request) {
 }
 
 func React(w http.ResponseWriter, r *http.Request) {
-	type Page struct {
-		Title     string
-		StaticDir string
-		//Body  []byte
-	}
-
 	p := &Page{Title: "Hello World", StaticDir: os.Getenv("STATIC_DIR")}
 
 	t, _ := template.ParseFiles("resources/views/index.html")
 
 	t.Execute(w, p)
-}
-
-func main() {
-	// Set up dotenv
-	err := godotenv.Load()
-
-	CreateRoutes()
-
-	if err != nil {
-		log.Fatal("Error loading .env file")
-	}
-
 }

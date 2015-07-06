@@ -1,14 +1,15 @@
-package app
+package config
 
 import (
 	"github.com/gorilla/mux"
+	"go-starter/app/controllers"
 	"net/http"
 )
 
-func CreateRoutes() {
+func Routes() {
 	// Set up the Router
 	r := mux.NewRouter()
-	r.HandleFunc("/bye", Bye)
+	r.HandleFunc("/bye", controllers.Bye)
 
 	// Static files
 	r.HandleFunc("/static/{path:.*}", func(w http.ResponseWriter, r *http.Request) {
@@ -16,7 +17,7 @@ func CreateRoutes() {
 	})
 
 	// Catch-all route for ReactJS to handle the routing
-	r.HandleFunc("/{path:.*}", React)
+	r.HandleFunc("/{path:.*}", controllers.React)
 
-	http.ListenAndServe(":8080", r)
+	http.ListenAndServe(":3001", r)
 }
