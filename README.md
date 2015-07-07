@@ -15,6 +15,7 @@ Then to install your pacakages:
 Lastly, create a `.env` file with the following contents for holding your local environment variables.
 
     STATIC_DIR="/static"
+    GO_ENV="development"
 
 ##Development
 To run the web server and have it automatically update upon making changes run the following (appears convoluted due to our use of gom):
