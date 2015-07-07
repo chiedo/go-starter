@@ -10,4 +10,3 @@ CREATE TABLE post (
  
 -- +goose Down
 DROP TABLE post;
-- See more at: https://labs.chie.do/using-goose-for-golang-with-mysql/#sthash.IZn7r0Og.dpuf
