@@ -1,0 +1,11 @@
+development:
+    driver: mysql
+    open: $MYSQL_USER:$MYSQL_PASS@tcp($MYSQL_HOSTNAME:$MYSQL_PORT)/$MYSQL_DATABASE
+
+staging:
+    driver: mysql
+    open: $MYSQL_USER:$MYSQL_PASS@tcp($MYSQL_HOSTNAME:$MYSQL_PORT)/$MYSQL_DATABASE
+
+production:
+    driver: mysql
+    open: $MYSQL_USER:$MYSQL_PASS@tcp($MYSQL_HOSTNAME:$MYSQL_PORT)/$MYSQL_DATABASE
